@@ -23,7 +23,7 @@ exports.up = function(knex) {
         .notNullable()
         .references("id")
         .inTable("recipes")
-        .onDelete("RESTRICT")
+        .onDelete("CASCADE")
         .onUpdate("CASCADE");
     })
     .createTable("quantity", tbl => {
@@ -35,7 +35,7 @@ exports.up = function(knex) {
         .notNullable()
         .references("id")
         .inTable("recipes")
-        .onDelete("RESTRICT")
+        .onDelete("CASCADE")
         .onUpdate("CASCADE");
       tbl
         .integer("ingredient_id")
@@ -43,7 +43,7 @@ exports.up = function(knex) {
         .notNullable()
         .references("id")
         .inTable("recipes")
-        .onDelete("RESTRICT")
+        .onDelete("CASCADE")
         .onUpdate("CASCADE");
     });
 };
